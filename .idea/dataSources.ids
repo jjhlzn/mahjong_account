@@ -3,4 +3,7 @@
   <data-source source="LOCAL" name="Rails mahjong_account: development" uuid="8c6e7db8-6e9d-49e0-b265-9275f1d799c7">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails mahjong_account: test" uuid="0ce648a2-c11a-44f4-b400-f17db1b9840a">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

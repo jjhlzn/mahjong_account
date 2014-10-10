@@ -27,6 +27,6 @@
     <%= f.text_field :player4Win %>
   </div>
   <div class="actions">
-    <%= f.submit '提交'%>
+    <%= f.submit '提交', onclick: 'return check_before_submit();'%>
   </div>
 <% end %>

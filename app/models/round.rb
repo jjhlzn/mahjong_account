@@ -5,4 +5,6 @@ class Round < ActiveRecord::Base
   validates :player3Win, presence: true
   validates :player4Win, presence: true
   validates :game_id, presence: true
+
+
 end

@@ -10,11 +10,18 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    @final_grade = Round.new()
-    @final_grade.player1Win = @game.rounds.map { |round| round.player1Win }.reduce { |a, b| a + b }
-    @final_grade.player2Win = @game.rounds.map { |round| round.player2Win }.reduce { |a, b| a + b }
-    @final_grade.player3Win = @game.rounds.map { |round| round.player3Win }.reduce { |a, b| a + b }
-    @final_grade.player4Win = @game.rounds.map { |round| round.player4Win }.reduce { |a, b| a + b }
+    @final_grade = Round.new
+    @final_grade.player1Win = 0
+    @final_grade.player2Win = 0
+    @final_grade.player3Win = 0
+    @final_grade.player4Win = 0
+    if @game.rounds.length  > 0
+      @final_grade.player1Win = @game.rounds.map { |round| round.player1Win }.reduce { |a, b| a + b }
+      @final_grade.player2Win = @game.rounds.map { |round| round.player2Win }.reduce { |a, b| a + b }
+      @final_grade.player3Win = @game.rounds.map { |round| round.player3Win }.reduce { |a, b| a + b }
+      @final_grade.player4Win = @game.rounds.map { |round| round.player4Win }.reduce { |a, b| a + b }
+    end
+    p @final_grade
   end
 
   # GET /games/new
@@ -25,6 +32,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
   end
+  
 
   # POST /games
   # POST /games.json
