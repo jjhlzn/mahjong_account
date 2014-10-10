@@ -1,34 +1,36 @@
+<% provide(:head_name, '牌局') %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Player1:</strong>
-  <%= @game.player1 %>
-</p>
+<table width="100%" id="game_table">
+  <tr>
+    <th>&nbsp;</th>
+    <th><%= @game.player1 %></th>
+    <th><%= @game.player2 %></th>
+    <th><%= @game.player3 %></th>
+    <th><%= @game.player4 %></th>
+  </tr>
+
+  <% @game.rounds.each_with_index do |round, i| %>
+      <tr>
+        <td>第<%= i + 1 %>轮</td>
+        <td class="<%= round.player1Win >= 0 ? 'win' : 'lose' %>"> <%= round.player1Win %> </td>
+        <td class="<%= round.player2Win >= 0 ? 'win' : 'lose' %>"> <%= round.player2Win %> </td>
+        <td class="<%= round.player3Win >= 0 ? 'win' : 'lose' %>"> <%= round.player3Win %> </td>
+        <td class="<%= round.player4Win >= 0 ? 'win' : 'lose' %>"> <%= round.player4Win %> </td>
+      </tr>
+  <% end %>
+
+  <tr>
+    <td>总成绩</td>
+    <td class="<%= @final_grade.player1Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player1Win %></td>
+    <td class="<%= @final_grade.player2Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player2Win %></td>
+    <td class="<%= @final_grade.player3Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player3Win %></td>
+    <td class="<%= @final_grade.player4Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player4Win %></td>
+  </tr>
+</table>
 
 <p>
-  <strong>Player2:</strong>
-  <%= @game.player2 %>
+  <%= link_to '添加新一轮成绩', new_game_round_path(@game) %>
 </p>
 
-<p>
-  <strong>Player3:</strong>
-  <%= @game.player3 %>
-</p>
-
-<p>
-  <strong>Player4:</strong>
-  <%= @game.player4 %>
-</p>
-
-<p>
-  <strong>Chipcount:</strong>
-  <%= @game.chipCount %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>

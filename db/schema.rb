@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20141009084021) do
 
   create_table "rounds", force: true do |t|
     t.integer  "game_id"
-    t.string   "player1Win"
-    t.string   "player2Win"
-    t.string   "player3Win"
-    t.string   "player4Win"
+    t.integer   "player1Win"
+    t.integer   "player2Win"
+    t.integer   "player3Win"
+    t.integer   "player4Win"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

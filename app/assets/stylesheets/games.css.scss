@@ -1,3 +1,10 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {font-size: 16px;}
+th {font-size: 150%;}
+
+#games_table {text-align: center;}
+#game_table {text-align: center;}
+.win {color: blue;}
+.lose {color: red;}

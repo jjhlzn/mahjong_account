@@ -11,27 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :game_id %><br>
-    <%= f.number_field :game_id %>
-  </div>
-  <div class="field">
-    <%= f.label :player1Win %><br>
+  <div data-role="fieldcontain">
+    <%= f.hidden_field :game_id, value: @game.id %>
+
+    <%= f.label :player1Win, @game.player1 %>
     <%= f.text_field :player1Win %>
-  </div>
-  <div class="field">
-    <%= f.label :player2Win %><br>
+
+    <%= f.label :player2Win, @game.player2  %>
     <%= f.text_field :player2Win %>
-  </div>
-  <div class="field">
-    <%= f.label :player3Win %><br>
+
+    <%= f.label :player3Win, @game.player3  %>
     <%= f.text_field :player3Win %>
-  </div>
-  <div class="field">
-    <%= f.label :player4Win %><br>
+
+    <%= f.label :player4Win, @game.player4  %>
     <%= f.text_field :player4Win %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '提交'%>
   </div>
 <% end %>

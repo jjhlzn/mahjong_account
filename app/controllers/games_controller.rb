@@ -10,6 +10,11 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @final_grade = Round.new()
+    @final_grade.player1Win = @game.rounds.map { |round| round.player1Win }.reduce { |a, b| a + b }
+    @final_grade.player2Win = @game.rounds.map { |round| round.player2Win }.reduce { |a, b| a + b }
+    @final_grade.player3Win = @game.rounds.map { |round| round.player3Win }.reduce { |a, b| a + b }
+    @final_grade.player4Win = @game.rounds.map { |round| round.player4Win }.reduce { |a, b| a + b }
   end
 
   # GET /games/new
