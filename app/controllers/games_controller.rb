@@ -27,6 +27,7 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    p @game
   end
 
   # GET /games/1/edit
@@ -72,6 +73,10 @@ class GamesController < ApplicationController
       format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def account
+
   end
 
   private

@@ -1,37 +1,16 @@
 <% provide(:head_name, '牌局列表') %>
 
+<ul data-role="listview">
+  <% @games.each do |game| %>
+      <li>
+        <a href="<%= game_path(game) %>">
+        <%= game.player1 %>&nbsp;&nbsp;&nbsp;
+        <%= game.player2 %>&nbsp;&nbsp;&nbsp;
+        <%= game.player3 %>&nbsp;&nbsp;&nbsp;
+        <%= game.player4 %></a>
+      </li>
+  <% end %>
+</ul>
 
-<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke" style="text-align: center">
-  <thead>
-    <tr>
-      <th>玩家1</th>
-      <th>玩家2</th>
-      <th>玩家3</th>
-      <th>玩家4</th>
-      <th>单价</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.player1 %></td>
-        <td><%= game.player2 %></td>
-        <td><%= game.player3 %></td>
-        <td><%= game.player4 %></td>
-        <td><%= game.price %></td>
-        <td><%= link_to '查看', game %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-
-</table>
-
-
-
-
-<br>
-
-<%= link_to '新建游戏', new_game_path %>
+<br/>
+<%= link_to '新建牌局', new_game_path, class: 'ui-btn ui-corner-all ui-mini'%>

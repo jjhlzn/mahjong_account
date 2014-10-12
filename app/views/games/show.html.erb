@@ -1,8 +1,5 @@
 <% provide(:head_name, '牌局') %>
-
-<p id="notice"><%= notice %></p>
-
-<table width="100%" id="game_table">
+<table id="game" class="table" width="100%" style="text-align: center">
   <tr>
     <th>&nbsp;</th>
     <th><%= @game.player1 %></th>
@@ -31,6 +28,7 @@
 </table>
 
 <p>
-  <%= link_to '添加新一轮成绩', new_game_round_path(@game) %>
+  <%= link_to '添加新一轮成绩', new_game_round_path(@game), class: 'ui-btn ui-corner-all ui-mini' %>
+  <a href="#" class="ui-btn ui-corner-all ui-mini" onclick="account()">结账</a>
 </p>
 
