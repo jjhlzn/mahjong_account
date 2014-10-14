@@ -17,7 +17,9 @@
 <div data-role="page">
   <div data-role="header">
     <div data-role="header">
-      <a href="javascript:window.history.back()" data-role="button" data-icon="back">返回</a>
+      <% if yield(:back_path).length > 0 %>
+        <a href="<%= yield(:back_path)%>" data-role="button" data-icon="back">返回</a>
+      <% end %>
       <h1 > <%= yield(:head_name) %> </h1>
       <a href="<%= root_path %>" data-role="button" data-icon="home">首页</a>
     </div>

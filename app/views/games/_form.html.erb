@@ -25,10 +25,10 @@
     <%= f.label :player4, "成员4:" %>
     <%= f.text_field :player4 %>
 
+    <div style='display: none;'>
     <%= f.label :chipCount, "牌数:" %>
-
-
-    <%= f.select :chipCount, [[50, 50], [60, 60]]  %>
+    <%= f.select :chipCount, [[50, 50], [60, 60]]%>
+    </div>
 
     <%= f.label :price, "每张牌:" %>
     <%= f.select :price, [[5, 5], [10, 10], [20, 20],[30, 30]]  %>
