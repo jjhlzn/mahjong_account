@@ -26,10 +26,12 @@
     <%= f.text_field :player4 %>
 
     <%= f.label :chipCount, "牌数:" %>
-    <%= f.text_field :chipCount %>
+
+
+    <%= f.select :chipCount, [[50, 50], [60, 60]]  %>
 
     <%= f.label :price, "每张牌:" %>
-    <%= f.text_field :price %>
+    <%= f.select :price, [[5, 5], [10, 10], [20, 20],[30, 30]]  %>
   </div>
   <div class="actions">
     <%= f.submit "创建牌局", onclick: "return check_before_submit_game()"%>

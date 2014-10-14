@@ -20,15 +20,39 @@
 
   <tr>
     <td>总成绩</td>
-    <td class="<%= @final_grade.player1Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player1Win %></td>
-    <td class="<%= @final_grade.player2Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player2Win %></td>
-    <td class="<%= @final_grade.player3Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player3Win %></td>
-    <td class="<%= @final_grade.player4Win >= 0 ? 'win' : 'lose' %>"><%= @final_grade.player4Win %></td>
+    <td class="<%= @final_grade.player1Win >= 0 ? 'win' : 'lose' %>">
+      <%= @final_grade.player1Win %>
+    </td>
+    <td class="<%= @final_grade.player2Win >= 0 ? 'win' : 'lose' %>">
+      <%= @final_grade.player2Win %>
+    </td>
+    <td class="<%= @final_grade.player3Win >= 0 ? 'win' : 'lose' %>">
+      <%= @final_grade.player3Win %>
+    </td>
+    <td class="<%= @final_grade.player4Win >= 0 ? 'win' : 'lose' %>">
+      <%= @final_grade.player4Win %>
+    </td>
+  </tr>
+
+  <tr id="account_row" style="display: none;">
+      <td>金额</td>
+      <td class="<%= @final_grade.player1Win >= 0 ? 'win' : 'lose' %>">
+        <%= "¥#{@final_grade.player1Win * @game.price}" %>
+      </td>
+      <td class="<%= @final_grade.player2Win >= 0 ? 'win' : 'lose' %>">
+        <%= "¥#{@final_grade.player2Win * @game.price}" %>
+      </td>
+      <td class="<%= @final_grade.player3Win >= 0 ? 'win' : 'lose' %>">
+        <%= "¥#{@final_grade.player3Win * @game.price}" %>
+      </td>
+      <td class="<%= @final_grade.player4Win >= 0 ? 'win' : 'lose' %>">
+        <%= "¥#{@final_grade.player4Win * @game.price}" %>
+      </td>
   </tr>
 </table>
 
 <p>
   <%= link_to '添加新一轮成绩', new_game_round_path(@game), class: 'ui-btn ui-corner-all ui-mini' %>
-  <a href="#" class="ui-btn ui-corner-all ui-mini" onclick="account()">结账</a>
+  <button id="account_link" class='ui-btn ui-corner-all ui-mini' onclick="account()">结账</button>
 </p>
 

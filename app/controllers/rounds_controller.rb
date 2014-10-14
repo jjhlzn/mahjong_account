@@ -23,20 +23,15 @@ class RoundsController < ApplicationController
   end
 
   # POST /rounds
-  # POST /rounds.json
   def create
     p params
     @game = Game.find(params[:round][:game_id])
     @round = @game.rounds.build(round_params)
 
-    respond_to do |format|
-      if @round.save
-        format.html { redirect_to game_path(@game) }
-        format.json { render :show, status: :created, location: @round }
-      else
-        format.html { render :new }
-        format.json { render json: @round.errors, status: :unprocessable_entity }
-      end
+    if @round.save
+      redirect_to game_path(@game)
+    else
+      render :new
     end
   end
 
