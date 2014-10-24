@@ -28,6 +28,12 @@ class RoundsController < ApplicationController
     @game = Game.find(params[:round][:game_id])
     @round = @game.rounds.build(round_params)
 
+    if @round.player1Win + @round.player2Win + @round.player3Win + @round.player4Win != 0
+      @notice = '输赢牌数不等.'
+      redirect_to game_path(@game), notice: '输赢牌数不等.'
+      return
+    end
+
     if @round.save
       redirect_to game_path(@game)
     else
