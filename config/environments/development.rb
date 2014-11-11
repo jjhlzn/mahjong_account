@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.log_tags = [:uuid, :remote_ip, lambda { |req| Time.now }]
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
