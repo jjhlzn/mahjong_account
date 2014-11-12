@@ -66,3 +66,6 @@ gem 'capistrano-rails'
 gem 'quiet_assets', group: :development
 gem 'thin', group: :development
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+

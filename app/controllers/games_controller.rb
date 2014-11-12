@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     @games = Game.all
 
     #加入一个{} block, 是为了效率。这样，当log_level大于debug的时候，不会去读取@games.count
-    #少一次数据库的操作 
+    #少一次数据库的操作
     logger.debug { "games.count = #{@games.count}" }
   end
 
