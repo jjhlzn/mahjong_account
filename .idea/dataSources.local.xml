@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails mahjong_account: development" uuid="8c6e7db8-6e9d-49e0-b265-9275f1d799c7">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="Rails mahjong_account: test" uuid="0ce648a2-c11a-44f4-b400-f17db1b9840a">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="Rails mahjong_account: production" uuid="53dccae9-3840-467e-9c13-7e07757969cb">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+  </component>
+</project>
